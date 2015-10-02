@@ -14,11 +14,10 @@ public class CourseParser {
     String result = "";
     try {
       Resources res = c.getResources();
-      InputStream in_s = res.openRawResource(R.raw.dump);
-      byte[] b = new byte[in_s.available()];
-      in_s.read(b);
-      return 
-      txtHelp.setText(new String(b));
+      InputStream in = res.openRawResource(R.raw.dump);
+      byte[] b = new byte[in.available()];
+      in.read(b);
+      return new String(b);
     } catch (Exception e) {
        e.printStackTrace();
     }
